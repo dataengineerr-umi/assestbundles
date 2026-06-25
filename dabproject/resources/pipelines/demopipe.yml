@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_job_pandian:
+      name: job_pandian
+      libraries:
+        - glob:
+            include: ../../src/pipe/myjob/transformations/**
+      schema: default
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog_name}
+      serverless: true
+      root_path: ../../src/pipe/myjob
